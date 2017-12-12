@@ -7,6 +7,11 @@ import java.util.Comparator;
  */
 public class BubbleSorter implements Sorter{
 
+    /**
+     * 第一种实现方式
+     * @param list   需要排序的数组
+     * @param <T>
+     */
     public <T extends Comparable<T>> void sort(T[] list) {
         boolean swapped = true;
         for (int i = 1, len = list.length; i < len && swapped;  ++i) {

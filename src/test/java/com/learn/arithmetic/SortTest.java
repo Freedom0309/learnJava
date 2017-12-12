@@ -7,6 +7,9 @@ import java.util.Comparator;
 public class SortTest {
 
 
+    /**
+     * 冒泡排序的测试
+     */
     @Test
     public void BubbleSortTest(){
 
@@ -32,5 +35,18 @@ public class SortTest {
         for (int i = 0; i < arrays1.length; i++) {
             System.out.print(arrays1[i] + " ");
         }*/
+    }
+
+    /**
+     * 插入排序的测试
+     */
+    @Test
+    public void InsertSorterTest(){
+        int array[] = {30,4,1,12,36,21,78,32,11,9,5,89,1};
+        InsertSorter insertSorter = new InsertSorter();
+        insertSorter.sort(array);
+        for (int i=0; i < array.length; i++) {
+            System.out.print(array[i] + " ");
+        }
     }
 }
