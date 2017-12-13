@@ -2,6 +2,7 @@ package com.learn.arithmetic;
 
 /**
  * 插入排序
+ *
  */
 public class InsertSorter  {
 

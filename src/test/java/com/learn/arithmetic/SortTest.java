@@ -5,8 +5,6 @@ import org.junit.Test;
 import java.util.Comparator;
 
 public class SortTest {
-
-
     /**
      * 冒泡排序的测试
      */
@@ -46,6 +44,19 @@ public class SortTest {
         InsertSorter insertSorter = new InsertSorter();
         insertSorter.sort(array);
         for (int i=0; i < array.length; i++) {
+            System.out.print(array[i] + " ");
+        }
+    }
+
+    /**
+     * 选择排序的测试
+     */
+    @Test
+    public void SelectSorterTest(){
+        int [] array = {3,0,4,1,12,36,21,78,32,11,9,5,89,1};
+        SelectSorter selectSorter = new SelectSorter();
+        selectSorter.sort(array);
+        for (int i=0; i<array.length; i++) {
             System.out.print(array[i] + " ");
         }
     }
