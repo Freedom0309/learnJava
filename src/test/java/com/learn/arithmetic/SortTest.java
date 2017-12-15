@@ -2,8 +2,6 @@ package com.learn.arithmetic;
 
 import org.junit.Test;
 
-import java.util.Comparator;
-
 public class SortTest {
     /**
      * 冒泡排序的测试
@@ -41,11 +39,16 @@ public class SortTest {
     @Test
     public void InsertSorterTest(){
         int array[] = {30,4,1,12,36,21,78,32,11,9,5,89,1};
+        int array1[] = {30,4,1,12,36,21,78,32,11,9,5,89,1};
         InsertSorter insertSorter = new InsertSorter();
         insertSorter.sort(array);
-        for (int i=0; i < array.length; i++) {
-            System.out.print(array[i] + " ");
-        }
+        System.out.println("插入排序的结果:");
+        print(array);
+
+        System.out.println();
+        System.out.println("二分插入排序的结果:");
+        insertSorter.dichotomyInsertionSort(array1);
+        print(array1);
     }
 
     /**
@@ -56,8 +59,24 @@ public class SortTest {
         int [] array = {3,0,4,1,12,36,21,78,32,11,9,5,89,1};
         SelectSorter selectSorter = new SelectSorter();
         selectSorter.sort(array);
-        for (int i=0; i<array.length; i++) {
-            System.out.print(array[i] + " ");
+        print(array);
+    }
+
+    public static void print(int [] data){
+        for (int i=0; i<data.length; i++) {
+            System.out.print(data[i] + "\t");
         }
+        System.out.println();
+    }
+
+    /**
+     * 归并排序测试
+     */
+    @Test
+    public void MergeSorterTest(){
+        int [] array = {3,0,4,1,12};
+        MergeSorter mergeSorter = new MergeSorter();
+        mergeSorter.mergeSort(array);
+        print(array);
     }
 }
