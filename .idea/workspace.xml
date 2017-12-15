@@ -60,8 +60,8 @@
       <file leaf-file-name="SortTest.java" pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/src/test/java/com/learn/arithmetic/SortTest.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="293">
-              <caret line="77" column="43" lean-forward="false" selection-start-line="77" selection-start-column="43" selection-end-line="77" selection-end-column="43" />
+            <state relative-caret-position="323">
+              <caret line="26" column="13" lean-forward="true" selection-start-line="26" selection-start-column="13" selection-end-line="26" selection-end-column="13" />
               <folding />
             </state>
           </provider>
@@ -200,8 +200,8 @@
   <component name="PropertiesComponent">
     <property name="WebServerToolWindowFactoryState" value="false" />
     <property name="aspect.path.notification.shown" value="true" />
-    <property name="last_opened_file_path" value="$PROJECT_DIR$/../../spring-framework" />
-    <property name="settings.editor.selected.configurable" value="fileTemplates" />
+    <property name="last_opened_file_path" value="$PROJECT_DIR$/../../jcohy" />
+    <property name="settings.editor.selected.configurable" value="settings.github" />
   </component>
   <component name="RunDashboard">
     <option name="ruleStates">
@@ -445,7 +445,7 @@
       <workItem from="1513128244272" duration="120000" />
       <workItem from="1513128417247" duration="9603000" />
       <workItem from="1513232006378" duration="10147000" />
-      <workItem from="1513303704446" duration="12178000" />
+      <workItem from="1513303704446" duration="14822000" />
     </task>
     <servers />
   </component>
@@ -482,11 +482,10 @@
     </history-entry>
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="38408000" />
+    <option name="totallyTimeSpent" value="41052000" />
   </component>
   <component name="ToolWindowManager">
     <frame x="-8" y="-8" width="1382" height="744" extended-state="6" />
-    <editor active="true" />
     <layout>
       <window_info id="Palette" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
       <window_info id="TODO" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="6" side_tool="false" content_ui="tabs" />
@@ -735,8 +734,8 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/src/test/java/com/learn/arithmetic/SortTest.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="293">
-          <caret line="77" column="43" lean-forward="false" selection-start-line="77" selection-start-column="43" selection-end-line="77" selection-end-column="43" />
+        <state relative-caret-position="323">
+          <caret line="26" column="13" lean-forward="true" selection-start-line="26" selection-start-column="13" selection-end-line="26" selection-end-column="13" />
           <folding />
         </state>
       </provider>
