@@ -1,0 +1,4 @@
+rabbitmq:
+  username: mqadmin
+  userpass: mqadmin
+  prot: 5672

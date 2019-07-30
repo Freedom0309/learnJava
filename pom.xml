@@ -12,6 +12,7 @@
         <module>java8</module>
         <module>DataStruture</module>
         <module>Arithmetic</module>
+        <module>MQ</module>
     </modules>
     <dependencies>
         <dependency>
