@@ -4,10 +4,10 @@ package com.freedom.stream;
  * create in 2019/6/24 23:30 by Allen
  */
 public class Dish {
-   private final String name;
-   private final boolean vegetarian;
-   private final int calories;
-   private final Type type;
+    private final String name;
+    private final boolean vegetarian;
+    private final int calories;
+    private final Type type;
 
     public Dish(String name, boolean vegetarian, int calories, Type type) {
         this.name = name;
@@ -16,7 +16,7 @@ public class Dish {
         this.type = type;
     }
 
-    public enum Type { MEAT, FISH, OTHER }
+    public enum Type {MEAT, FISH, OTHER}
 
     public String getName() {
         return name;
@@ -32,5 +32,15 @@ public class Dish {
 
     public Type getType() {
         return type;
+    }
+
+    @Override
+    public String toString() {
+        return "Dish{" +
+                "name='" + name + '\'' +
+                ", vegetarian=" + vegetarian +
+                ", calories=" + calories +
+                ", type=" + type +
+                '}';
     }
 }

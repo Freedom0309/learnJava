@@ -17,7 +17,7 @@ public class MethodReference {
         Consumer<String> consumer = s -> System.out.println(s);
         userConsumer(consumer, "How are you? Allen");
 
-        userConsumer((s)-> System.out.println(s), "How do you do? Allen");
+        userConsumer((s) -> System.out.println(s), "How do you do? Allen");
         userConsumer(System.out::println, "Hello, Allen");
 
         List<Apple> source = Arrays.asList(new Apple("red", 150),
@@ -27,7 +27,9 @@ public class MethodReference {
         System.out.println(source);
 
         //lambda表达式来传入要比较的参数, 函数推导方式
-        source.sort((a1, a2) -> {return  a1.getColor().compareTo(a2.getColor());});
+        source.sort((a1, a2) -> {
+            return a1.getColor().compareTo(a2.getColor());
+        });
       /*  source.sort(new Comparator<Apple>() {
             @Override
             public int compare(Apple o1, Apple o2) {
@@ -35,7 +37,7 @@ public class MethodReference {
             }
         });
         */
-      source.sort(Comparator.comparing(Apple::getColor));
+        source.sort(Comparator.comparing(Apple::getColor));
         System.out.println(source);
 
         source.stream().forEach(apple -> System.out.println(apple));
@@ -66,7 +68,7 @@ public class MethodReference {
 
     }
 
-    private static <T> void userConsumer(Consumer<T> consumer, T t){
+    private static <T> void userConsumer(Consumer<T> consumer, T t) {
         consumer.accept(t);
     }
 }

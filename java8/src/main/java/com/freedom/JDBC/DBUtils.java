@@ -31,7 +31,7 @@ public class DBUtils {
         }
     }
 
-    public static Connection getConnection(){
+    public static Connection getConnection() {
         return conn;
     }
 

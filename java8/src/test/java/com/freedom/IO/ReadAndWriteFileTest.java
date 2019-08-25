@@ -13,13 +13,13 @@ import java.io.File;
 public class ReadAndWriteFileTest {
 
     @Test
-    public void readLineFromTxtTest(){
+    public void readLineFromTxtTest() {
         ReadAndWriteFile readAndWriteFile = new ReadAndWriteFile();
         readAndWriteFile.readLineFromTxt(3);
     }
 
     @Test
-    public void writeToTxtTest(){
+    public void writeToTxtTest() {
         ReadAndWriteFile readAndWriteFile = new ReadAndWriteFile();
         File filename = new File("D:\\output.txt");
         readAndWriteFile.writeToTxt(filename);

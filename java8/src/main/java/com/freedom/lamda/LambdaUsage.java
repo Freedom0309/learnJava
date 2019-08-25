@@ -2,7 +2,6 @@ package com.freedom.lamda;
 
 import java.util.ArrayList;
 import java.util.Arrays;
-import java.util.Collections;
 import java.util.List;
 import java.util.function.Predicate;
 
@@ -11,10 +10,10 @@ import java.util.function.Predicate;
  */
 public class LambdaUsage {
 
-    private static List<Apple> filter(List<Apple> source, Predicate<Apple> predicate){
+    private static List<Apple> filter(List<Apple> source, Predicate<Apple> predicate) {
         List<Apple> apples = new ArrayList<>();
-        for (Apple apple: source) {
-            if(predicate.test(apple))
+        for (Apple apple : source) {
+            if (predicate.test(apple))
                 apples.add(apple);
         }
         return apples;

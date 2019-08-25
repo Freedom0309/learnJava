@@ -13,9 +13,10 @@ public class ReadAndWriteFile {
 
     /**
      * 读取txt文件中的某一行的内容
+     *
      * @param number
      */
-    public void readLineFromTxt(int number){
+    public void readLineFromTxt(int number) {
 
         long startTime = System.currentTimeMillis();
         try {
@@ -43,15 +44,16 @@ public class ReadAndWriteFile {
             reader.close();
         } catch (Exception e) {
             e.printStackTrace();
-        }finally {
+        } finally {
         }
     }
 
     /**
      * 向文件中写数据
+     *
      * @param fileName
      */
-    public void writeToTxt(File fileName){
+    public void writeToTxt(File fileName) {
 
         try {
             //文件的路径

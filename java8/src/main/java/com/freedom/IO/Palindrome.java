@@ -2,6 +2,7 @@ package com.freedom.IO;
 
 /**
  * 判断一个字符串是否回文
+ *
  * @Author: Allen Liu
  * @Description:
  * @Date: Created in 14:33 2017/12/26
@@ -11,9 +12,10 @@ public class Palindrome {
 
     /**
      * 将字符串倒置后，在逐一比较
+     *
      * @param str
      */
-    public void isPalindrome(String str){
+    public void isPalindrome(String str) {
         StringBuilder sb = new StringBuilder(str);
         //旋转字符串
         sb.reverse();
@@ -34,9 +36,10 @@ public class Palindrome {
 
     /**
      * 将字符串倒置后创建新的字符串，然后与原字符串进行比较
+     *
      * @param str
      */
-    public void directComparePalindrome(String str){
+    public void directComparePalindrome(String str) {
         StringBuilder stringBuilder = new StringBuilder(str);
         //旋转字符串
         stringBuilder.reverse();
@@ -54,13 +57,14 @@ public class Palindrome {
 
     /**
      * 使用截取字符串的方式比较
+     *
      * @param str
      */
-    public void cutOutChar(String str){
+    public void cutOutChar(String str) {
         int count = 0;
         for (int i = 0; i < str.length() / 2; i++) {
             //对字符串进行截取
-            if ((str.substring(i, i+1)).equals(str.substring(str.length() - 1 - i, str.length() - i))) {
+            if ((str.substring(i, i + 1)).equals(str.substring(str.length() - 1 - i, str.length() - i))) {
                 count++;
             }
         }

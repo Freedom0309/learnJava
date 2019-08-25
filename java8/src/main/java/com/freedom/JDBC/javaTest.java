@@ -19,7 +19,7 @@ public class javaTest {
         try {
             PreparedStatement pst = conn.prepareStatement(s);
             ResultSet rs = pst.executeQuery();
-            while (rs.next()){
+            while (rs.next()) {
                 System.out.println(rs.getString("id") + " " +
                         rs.getString("name"));
             }
@@ -28,7 +28,7 @@ public class javaTest {
             conn.close();
         } catch (SQLException e) {
             e.printStackTrace();
-        } catch (Exception e){
+        } catch (Exception e) {
             e.printStackTrace();
         }
     }

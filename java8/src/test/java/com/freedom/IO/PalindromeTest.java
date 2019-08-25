@@ -11,7 +11,7 @@ import org.junit.Test;
 public class PalindromeTest {
 
     @Test
-    public void PalindromeTest(){
+    public void PalindromeTest() {
         String str = "12321";
         String str1 = "abcba";
         Palindrome palindrome = new Palindrome();
