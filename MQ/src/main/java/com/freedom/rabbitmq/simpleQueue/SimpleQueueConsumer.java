@@ -20,6 +20,7 @@ import java.io.IOException;
  */
 public class SimpleQueueConsumer {
     private static final String SIMPLE_QUEUE = "simple_queue";
+
     public static void main(String[] args) {
         ConnectionFactory factory = RabbitMQUtils.getConnection();
         //创建通道
@@ -29,6 +30,7 @@ public class SimpleQueueConsumer {
             connection = factory.newConnection();
             channel = connection.createChannel();
             channel.queueDeclare(SIMPLE_QUEUE, false, false, false, null);
+            //监听队列，处理消息
             Consumer consumer = new DefaultConsumer(channel) {
                 @Override
                 public void handleDelivery(String consumerTag, Envelope envelope, AMQP.BasicProperties properties, byte[] body) throws IOException {

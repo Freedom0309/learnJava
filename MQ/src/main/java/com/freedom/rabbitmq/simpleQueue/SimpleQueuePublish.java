@@ -1,6 +1,7 @@
 package com.freedom.rabbitmq.simpleQueue;
 
 import com.freedom.rabbitmq.RabbitMQUtils;
+import com.rabbitmq.client.AMQP;
 import com.rabbitmq.client.Channel;
 import com.rabbitmq.client.Connection;
 import com.rabbitmq.client.ConnectionFactory;
@@ -11,7 +12,7 @@ import java.util.concurrent.TimeoutException;
 /**
  * Copyright: Copyright (c) 2019 Asiainfo-Linkage
  *
- * @Description: TODO
+ * @Description: 简单队列
  * @version:
  * @author: liufeng
  * @date: 20:23 2019/7/30
@@ -34,6 +35,7 @@ public class SimpleQueuePublish {
         channel.queueDeclare(SIMPLE_QUEUE, false, false, false, null);
         String msg = "aaaaaaa I am tired";
 
+        //发布消息
         channel.basicPublish("", SIMPLE_QUEUE, null, msg.getBytes());
         channel.close();
         connection.close();

@@ -20,8 +20,8 @@ public class RabbitMQUtils {
     public static final ConnectionFactory getConnection(){
 
         ConnectionFactory factory = new ConnectionFactory();
-//        factory.setHost("192.168.11.233");
-        factory.setHost("114.115.180.255");
+//        factory.setHost("49.232.15.229");
+        factory.setHost("192.168.11.233");
         factory.setPort(5672);
         factory.setUsername("mqadmin");
         factory.setVirtualHost("/");

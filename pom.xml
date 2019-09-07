@@ -13,6 +13,7 @@
         <module>DataStruture</module>
         <module>Arithmetic</module>
         <module>MQ</module>
+        <module>guava</module>
     </modules>
     <dependencies>
         <dependency>
