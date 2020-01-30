@@ -18,6 +18,7 @@ public class BubbleSorter implements Sorter {
      * @param list   需要排序的数组
      * @param <T>
      */
+    @Override
     public <T extends Comparable<T>> void sort(T[] list) {
         boolean swapped = true;
         for (int i = 1, len = list.length; i < len && swapped;  ++i) {
@@ -33,6 +34,7 @@ public class BubbleSorter implements Sorter {
         }
     }
 
+    @Override
     public <T> void sort(T[] list, Comparator<T> comparator) {
         boolean swapped = true;
         for (int i = 1, len = list.length; i < len && swapped; ++i) {
