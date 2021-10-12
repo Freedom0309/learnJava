@@ -9,14 +9,14 @@ import java.time.LocalDate;
 public class ZplPrint {
     private String printerURI = null;//打印机完整路径
     private PrintService printService = null;//打印机服务
-    //GB18030
-    private String begin = "^XA^SEE:GB18030.DAT^CW1,E:SIMSUN.FNT"; //标签格式以^XA开始
+    //GB18030 ^CW1,E:SIMSUN.FNT  ARLRDBD.TTF SIMHEI
+    private String begin = "^XA^SEE:GB18030.DAT^CWA,R:SIMHEI.FNT^PMN^MNY^MMT^MTD^MD20^LH10,10^JMA"; //标签格式以^XA开始
     private String end = "^XZ"; //标签格式以^XZ结束
     private String content = "";
-    private int cnCharSize = 35;//中文字体大小？ 25
+    private int cnCharSize = 30;//中文字体大小？ 25
     private int charSize = 26;//英文字体高度？
     private int charSep = 15;//英文字体大小？
-    private int lineSep = 5;//行间距？
+    private int lineSep = 10;//行间距？
     //打印纸宽度 x
     private int width = 500;
     //打印纸高度 y
@@ -26,7 +26,7 @@ public class ZplPrint {
     private int lableLength = 4 * cnCharSize;
     //label的起始位置
     private int labelx = 50;
-    private int labely = 10;
+    private int labely = 20;
     //条形码起始的x
     private int bqx = 105;
     //条形码起始的y
@@ -37,17 +37,15 @@ public class ZplPrint {
     private int bottomy = 20;
 
     public void execute(LabelMessage message) {
-        this.init("ZDesigner GT800 (EPL)");
+        this.init("ZDesigner GT800 (ZPL)");
 //        o.setMachineName("");
         // F0 x坐标，y坐标
         //BQ 二维码
-        //B8
 //        String qrcode_t = "^FO%s,%s^BY3^B1N,N,100,Y,N^CI0^FD${data}^FS";
         String qrcode_t = "^FO%s,%s^BY3^BCN,100,Y,N,N^FD${data}^FS";
         qrcode_t = String.format(qrcode_t, bqx, bqy);//二维码位置
         this.setBarcode(message.getNumber(), qrcode_t);//设置二维码的内容
         //FW控制字体方向   N   R  I  B  和setCharR中的A0R的R，A1R的R
-//        content += "^FPH^CI28^FO200,10^A1N,35,35^FB500,1,,^FD资产编号:xxxx14522？？？^FS";
         content += "^FWN";
         int[] xy = new int[]{labelx, labely};
         //起始   100，50
@@ -63,7 +61,7 @@ public class ZplPrint {
 
         String zpl2 = this.getZpl();
         System.out.println("zpl:" + zpl2);
-//        this.print(zpl2);
+        this.print(zpl2);
     }
 
     /**
@@ -76,7 +74,7 @@ public class ZplPrint {
     private int[] setLabelTitle(ZplPrint p, int[] xy, String company) {
         xy[0] = labelx;
         xy = p.setTitle(company, xy);
-        xy[1] += cnCharSize + lineSep * 3;
+        xy[1] += cnCharSize + lineSep * 5;
         return xy;
     }
 
@@ -85,17 +83,17 @@ public class ZplPrint {
         xy = p.setText(label1, xy);
         xy[0] = labelx + lableLength - 10;
         xy = p.setText(value1, xy);
-        xy[1] += cnCharSize - 5;
+        xy[1] += cnCharSize;
         return xy;
     }
 
     private int[] setLabelValueNoWrapLine(ZplPrint p, int[] xy, String label1, String value1) {
-        xy[0] = xy[0] + lableLength / 2;
-        xy[1] -= (cnCharSize - 5);
+        xy[0] = xy[0] + lableLength / 2 - 40;
+        xy[1] -= cnCharSize;
         xy = p.setText(label1, xy);
-        xy[0] += labelx;
+        xy[0] += labelx - 50;
         xy = p.setText(value1, xy);
-        xy[1] += cnCharSize - 5;
+        xy[1] += cnCharSize;
         return xy;
     }
 
@@ -237,10 +235,10 @@ public class ZplPrint {
         if (cn) {
             //中文
             content += "^CI14";
-            content += "^FO" + x + "," + y + "^MD10^A1," + cnCharSize + "," + cnCharSize + "^FD" + str + "^FS";
+            content += "^FO" + x + "," + y + "^A1," + cnCharSize + "," + cnCharSize + "^FD" + str + "^FS";
         } else {
             content += "^CI0";
-            content += "^FO" + x + "," + y + "^MD10^A0," + charSize + "," + charSize + "^FD" + str + "^FS";
+            content += "^FO" + x + "," + y + "^A0," + charSize + "," + charSize + "^FD" + str + "^FS";
         }
 
     }
@@ -249,7 +247,7 @@ public class ZplPrint {
         if (cn) {
             //中文
             content += "^CI14";
-            content += "^FO" + x + "," + y + "^MD25^A1," + charSize + "," + charSize + "^FD" + str + "^FS";
+            content += "^FO" + x + "," + y + "^A1," + charSize + "," + charSize + "^FD" + str + "^FS";
         } else {
             content += "^CI0";
             content += "^FO" + x + "," + y + "^A0," + charSize + "," + charSize + "^FD" + str + "^FS";

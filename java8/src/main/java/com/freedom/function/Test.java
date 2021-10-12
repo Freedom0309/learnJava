@@ -1,8 +1,5 @@
 package com.freedom.function;
 
-import jdk.internal.misc.JavaLangAccess;
-import jdk.internal.misc.SharedSecrets;
-
 import java.nio.file.FileSystem;
 import java.nio.file.FileSystems;
 import java.nio.file.spi.FileSystemProvider;
@@ -38,8 +35,6 @@ class Test {
 
 //        System.out.println(provider.getScheme());
 
-        JavaLangAccess javaLangAccess = SharedSecrets.getJavaLangAccess();
-        javaLangAccess.invalidatePackageAccessCache();
     }
 
 }
