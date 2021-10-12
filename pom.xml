@@ -13,7 +13,6 @@
         <module>DataStruture</module>
         <module>Arithmetic</module>
         <module>MQ</module>
-        <module>guava</module>
         <module>reactor</module>
         <module>IO</module>
     </modules>
