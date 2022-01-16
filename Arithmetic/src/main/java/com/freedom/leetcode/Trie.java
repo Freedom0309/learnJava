@@ -15,6 +15,7 @@ public class Trie {
     private Trie[] children;
     private Boolean isEnd;
 
+    char char_a = 'a';
     public Trie() {
         this.children = new Trie[26];
         this.isEnd = false;
@@ -26,7 +27,7 @@ public class Trie {
 
         for (int index = 0; index < word.length(); index++) {
             char ch = word.charAt(index);
-            int chIndex = ch - 'a';
+            int chIndex = ch - char_a;
             if (node.children[chIndex] == null) {
                 node.children[chIndex] = new Trie();
             }
@@ -53,7 +54,7 @@ public class Trie {
         for (int i = 0; i < prefix.length(); i++) {
 
             char ch = prefix.charAt(i);
-            int index = ch - 'a';
+            int index = ch - char_a;
             if (node.children[index] == null) {
                 return null;
             }
